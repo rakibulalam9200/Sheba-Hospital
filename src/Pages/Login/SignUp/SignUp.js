@@ -78,7 +78,10 @@ const SignUp = () => {
         setError("");
       })
       .catch((error) => {
-        setError(error.message);
+        if(error.message === "Firebase: Error (auth/wrong-password)."){
+          setError("Please,Enter Valid Password!!!");
+        }
+        
       });
   };
 
